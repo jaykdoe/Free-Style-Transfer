@@ -136,7 +136,7 @@ def select_painter_image():
 #FUNCTION for "Painter Image"##################################################
 ###########################################################################
 def load_img(path_to_img):
-  max_dim = 512
+  max_dim = 5120
   img = tf.io.read_file(path_to_img)
   img = tf.image.decode_image(img, channels=3)
   img = tf.image.convert_image_dtype(img, tf.float32)
@@ -167,7 +167,7 @@ def load_own_img():
     decoded = base64.b64decode(encoded)
 
     img = decoded
-    max_dim = 512
+    max_dim = 5120
     img = tf.image.decode_image(img, channels=3)
     img = tf.image.convert_image_dtype(img, tf.float32)
     shape = tf.cast(tf.shape(img)[:-1], tf.float32)
@@ -195,7 +195,7 @@ def load_own_img_custom():
         #decode image
         decoded = base64.b64decode(encoded)
         img = decoded
-        max_dim = 512
+        max_dim = 5120
 
         img = tf.image.decode_image(img, channels=3)
         img = tf.image.convert_image_dtype(img, tf.float32)
